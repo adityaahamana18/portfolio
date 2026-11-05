@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Aditya Ahamana — Full Stack Developer</title>
+<meta name="description" content="Portfolio of Aditya Ahamana — Full Stack Developer specializing in React, JavaScript, Python, Firebase, and AI-powered web applications."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -28,20 +29,41 @@ body:hover #cursor{opacity:1}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s;backdrop-filter:blur(0px)}
 nav.stuck{background:rgba(7,7,13,0.85);backdrop-filter:blur(20px);border-color:var(--bd)}
 .nav-logo{font-family:var(--fh);font-size:2rem;color:var(--acc);letter-spacing:.05em;text-decoration:none}
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{color:var(--mt);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--acc);transition:width .3s}
+.nav-links a:not(.nav-resume-btn)::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--acc);transition:width .3s}
 .nav-links a:hover{color:var(--tx)}
-.nav-links a:hover::after{width:100%}
+.nav-links a:not(.nav-resume-btn):hover::after{width:100%}
+
+.nav-resume-btn{
+  background:rgba(232,255,71,0.1);
+  border:1px solid var(--acc);
+  color:var(--acc) !important;
+  padding:.45rem 1.1rem;
+  border-radius:4px;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  transition:all .25s ease;
+}
+.nav-resume-btn:hover{
+  background:var(--acc) !important;
+  color:#000 !important;
+  box-shadow:0 0 20px rgba(232,255,71,.4);
+  transform:translateY(-2px);
+}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--tx);transition:all .3s}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
-.mobile-menu{display:none;position:fixed;inset:0;top:72px;background:rgba(7,7,13,.97);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:3rem}
+.mobile-menu{display:none;position:fixed;inset:0;top:72px;background:rgba(7,7,13,.97);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--fh);font-size:3rem;color:var(--tx);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.mobile-menu a{font-family:var(--fh);font-size:2.4rem;color:var(--tx);text-decoration:none;letter-spacing:.1em;transition:color .2s}
 .mobile-menu a:hover{color:var(--acc)}
+.mob-resume{color:var(--acc) !important;border:1px solid var(--acc);padding:.5rem 1.6rem;border-radius:4px;font-size:1.8rem !important}
 
 /* ── SECTIONS ── */
 section{position:relative;z-index:1;padding:8rem 6%}
@@ -59,10 +81,12 @@ section{position:relative;z-index:1;padding:8rem 6%}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
 .hero-name{font-family:var(--fh);font-size:clamp(5rem,10vw,9rem);line-height:.9;letter-spacing:.04em;animation:slideUp .9s .1s ease both}
 .hero-name .line2{color:var(--acc);display:block;-webkit-text-stroke:0px}
-.hero-subtitle{font-size:1.1rem;color:var(--mt);margin:1.5rem 0 2rem;font-weight:300;animation:slideUp .9s .2s ease both}
+.hero-subtitle{font-size:1.05rem;line-height:1.7;color:var(--mt);margin:1.5rem 0 2rem;font-weight:300;max-width:540px;animation:slideUp .9s .2s ease both}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:slideUp .9s .3s ease both}
 .btn-p{background:var(--acc);color:#000;padding:.8rem 1.8rem;border-radius:3px;font-weight:700;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .3s;letter-spacing:.04em}
 .btn-p:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 35px rgba(232,255,71,.3)}
+.btn-resume{background:rgba(232,255,71,0.08);color:var(--acc);border:1px solid var(--acc);padding:.8rem 1.8rem;border-radius:3px;font-weight:600;font-size:.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;letter-spacing:.04em}
+.btn-resume:hover{background:var(--acc);color:#000;transform:translateY(-3px);box-shadow:0 15px 35px rgba(232,255,71,.35)}
 .btn-s{background:transparent;color:var(--tx);padding:.8rem 1.8rem;border-radius:3px;font-weight:500;font-size:.9rem;text-decoration:none;border:1px solid var(--bd);display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;letter-spacing:.04em}
 .btn-s:hover{border-color:var(--acc);color:var(--acc)}
 @keyframes slideUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
@@ -86,7 +110,7 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .sec-eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem}
 .sec-eyebrow::before{content:'';width:30px;height:1px;background:var(--acc)}
 .sec-title{font-family:var(--fh);font-size:clamp(3rem,6vw,5rem);letter-spacing:.04em;line-height:1}
-.sec-desc{color:var(--mt);margin-top:1rem;font-size:1.02rem;font-weight:300;max-width:480px}
+.sec-desc{color:var(--mt);margin-top:1rem;font-size:1.02rem;font-weight:300;max-width:540px}
 
 /* ── ABOUT ── */
 #about{background:var(--s1)}
@@ -101,8 +125,10 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .astat-l{color:var(--mt);font-size:.8rem;margin-top:.1rem}
 .about-text p{color:var(--mt);margin-bottom:1rem;font-size:1rem;line-height:1.8;font-weight:300}
 .about-text p strong{color:var(--tx);font-weight:600}
-.edu-block{background:var(--s2);border:1px solid var(--bd);border-left:3px solid var(--acc2);border-radius:0 10px 10px 0;padding:1.2rem 1.4rem;margin-top:1.8rem}
-.edu-block-title{font-weight:600;font-size:.95rem}
+.edu-cards{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
+.edu-block{background:var(--s2);border:1px solid var(--bd);border-left:3px solid var(--acc2);border-radius:0 10px 10px 0;padding:1.1rem 1.3rem;transition:transform .3s,border-color .3s}
+.edu-block:hover{transform:translateX(5px);border-left-color:var(--acc)}
+.edu-block-title{font-weight:600;font-size:.95rem;color:var(--tx)}
 .edu-block-sub{color:var(--mt);font-size:.82rem;margin-top:.3rem}
 
 /* ── SKILLS ── */
@@ -117,6 +143,12 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .sk-bar{background:rgba(255,255,255,.06);border-radius:100px;height:5px;overflow:hidden}
 .sk-fill{height:100%;border-radius:100px;background:var(--sk-c,var(--acc));width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
 
+.skills-pill-group{margin-top:3.5rem;background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:2rem}
+.sp-title{font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
+.sp-list{display:flex;flex-wrap:wrap;gap:.6rem}
+.sp-tag{background:rgba(255,255,255,0.04);border:1px solid var(--bd);border-radius:6px;padding:.4rem .9rem;font-size:.82rem;color:var(--tx);transition:all .25s}
+.sp-tag:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
+
 /* ── PROJECTS ── */
 #projects{background:var(--s1)}
 .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;perspective:1200px}
@@ -127,18 +159,181 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .proj-thumb::before{content:'';position:absolute;inset:0;background:var(--pt-bg,linear-gradient(135deg,#111128,#0e1a30))}
 .proj-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,var(--pt-glow,rgba(232,255,71,.15)),transparent 60%)}
 .proj-body{padding:1.5rem}
-.proj-name{font-family:var(--fh);font-size:1.5rem;letter-spacing:.04em}
+.proj-badge{display:inline-block;padding:.2rem .6rem;background:rgba(71,200,255,.1);border:1px solid rgba(71,200,255,.2);color:var(--acc2);border-radius:4px;font-size:.7rem;font-weight:600;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.05em}
+.proj-name{font-family:var(--fh);font-size:1.6rem;letter-spacing:.04em}
 .proj-desc{color:var(--mt);font-size:.88rem;line-height:1.7;margin:.5rem 0 1rem;font-weight:300}
 .proj-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
 .ptag{background:rgba(232,255,71,.08);border:1px solid rgba(232,255,71,.18);border-radius:3px;padding:.2rem .6rem;font-size:.7rem;color:var(--acc);font-weight:600;letter-spacing:.05em}
+.proj-actions{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-top:1.2rem;position:relative;z-index:2}
+.proj-btn-live{background:var(--acc);color:#000 !important;padding:.5rem 1.1rem;border-radius:4px;font-size:.78rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 12px rgba(232,255,71,.2)}
+.proj-btn-live:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,255,71,.4)}
+.proj-btn-gh{background:rgba(255,255,255,0.06);border:1px solid var(--bd);color:var(--tx) !important;padding:.5rem 1.1rem;border-radius:4px;font-size:.78rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;letter-spacing:.04em;text-transform:uppercase;transition:all .2s}
+.proj-btn-gh:hover{border-color:var(--acc);color:var(--acc) !important;transform:translateY(-2px);background:rgba(232,255,71,0.06)}
 .proj-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--tx);font-size:.82rem;font-weight:600;text-decoration:none;transition:color .2s;letter-spacing:.05em;text-transform:uppercase}
 .proj-link:hover{color:var(--acc)}
 
+/* ── RESUME SECTION ── */
+#resume{background:var(--bg)}
+.resume-card-box{
+  background:linear-gradient(135deg,rgba(15,15,26,0.95),rgba(20,20,32,0.98));
+  border:1px solid rgba(232,255,71,0.25);
+  border-radius:20px;
+  padding:3.5rem;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+  position:relative;
+  overflow:hidden;
+}
+.resume-card-box::before{
+  content:'';
+  position:absolute;
+  top:-40%;
+  right:-15%;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,rgba(232,255,71,0.12),transparent 70%);
+  pointer-events:none;
+}
+.resume-layout{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:3.5rem;
+  align-items:center;
+}
+.resume-meta-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.35rem .9rem;
+  background:rgba(232,255,71,0.08);
+  border:1px solid rgba(232,255,71,0.25);
+  border-radius:20px;
+  color:var(--acc);
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.resume-highlights{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+  margin:1.8rem 0;
+}
+.resume-hl-item{
+  display:flex;
+  align-items:flex-start;
+  gap:1rem;
+}
+.resume-hl-icon{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  background:rgba(71,200,255,0.1);
+  border:1px solid rgba(71,200,255,0.2);
+  color:var(--acc2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1rem;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.resume-hl-text h4{
+  font-size:.98rem;
+  font-weight:600;
+  color:var(--tx);
+}
+.resume-hl-text p{
+  font-size:.85rem;
+  color:var(--mt);
+  margin-top:3px;
+  line-height:1.5;
+}
+.resume-preview-box{
+  background:var(--s1);
+  border:1px solid var(--bd);
+  border-radius:16px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  transition:all .3s ease;
+}
+.resume-preview-box:hover{
+  border-color:rgba(232,255,71,0.3);
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+.resume-file-icon{
+  font-size:3.8rem;
+  margin-bottom:1rem;
+  animation:floatDoc 3s ease-in-out infinite;
+}
+@keyframes floatDoc{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.resume-file-name{
+  font-weight:700;
+  font-size:1.1rem;
+  color:var(--tx);
+  margin-bottom:.3rem;
+}
+.resume-file-info{
+  color:var(--mt);
+  font-size:.8rem;
+  margin-bottom:1.8rem;
+}
+.resume-cta-group{
+  display:flex;
+  gap:.9rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:100%;
+}
+.btn-res-dl{
+  background:var(--acc);
+  color:#000;
+  padding:.8rem 1.6rem;
+  border-radius:4px;
+  font-weight:700;
+  font-size:.88rem;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  transition:all .2s;
+  letter-spacing:.03em;
+}
+.btn-res-dl:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(232,255,71,.35);
+}
+.btn-res-view{
+  background:transparent;
+  color:var(--tx);
+  border:1px solid var(--bd);
+  padding:.8rem 1.6rem;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.88rem;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  transition:all .2s;
+}
+.btn-res-view:hover{
+  border-color:var(--acc);
+  color:var(--acc);
+}
+
 /* ── CONTACT ── */
-#contact{}
+#contact{background:var(--s1)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
 .c-links{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem}
-.c-link{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.3rem;display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--tx);transition:all .3s;transform-style:preserve-3d}
+.c-link{background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.3rem;display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--tx);transition:all .3s;transform-style:preserve-3d}
 .c-link:hover{border-color:var(--acc);transform:translateX(8px) rotateY(-4deg);background:rgba(232,255,71,.04)}
 .c-link-ico{width:38px;height:38px;border-radius:9px;background:rgba(232,255,71,.08);border:1px solid rgba(232,255,71,.15);display:flex;align-items:center;justify-content:center;color:var(--acc);font-size:.95rem;flex-shrink:0}
 .c-link-label{font-weight:600;font-size:.9rem}
@@ -149,7 +344,7 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
 .f-grp{display:flex;flex-direction:column;gap:.4rem}
 .f-grp label{font-size:.72rem;color:var(--mt);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-.f-grp input,.f-grp textarea{background:var(--s1);border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:.8rem 1rem;font-family:var(--fb);font-size:.92rem;outline:none;resize:none;transition:border-color .2s,box-shadow .2s}
+.f-grp input,.f-grp textarea{background:var(--s2);border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:.8rem 1rem;font-family:var(--fb);font-size:.92rem;outline:none;resize:none;transition:border-color .2s,box-shadow .2s}
 .f-grp input:focus,.f-grp textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(232,255,71,.1)}
 .f-grp textarea{min-height:120px}
 .btn-send{background:var(--acc);color:#000;padding:.85rem 2rem;border-radius:3px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;width:fit-content;transition:transform .2s,box-shadow .3s;letter-spacing:.05em;text-transform:uppercase}
@@ -158,10 +353,10 @@ section{position:relative;z-index:1;padding:8rem 6%}
 .f-ok.show{display:flex}
 
 /* ── FOOTER ── */
-footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-align:center;position:relative;z-index:1}
+footer{background:var(--s2);border-top:1px solid var(--bd);padding:3rem 6%;text-align:center;position:relative;z-index:1}
 .ft-logo{font-family:var(--fh);font-size:2rem;color:var(--acc);display:inline-block;margin-bottom:.8rem;letter-spacing:.06em}
 .ft-soc{display:flex;gap:.8rem;justify-content:center;margin:1rem 0}
-.ft-s{width:38px;height:38px;border-radius:8px;background:var(--s2);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--mt);text-decoration:none;font-size:.9rem;transition:all .2s}
+.ft-s{width:38px;height:38px;border-radius:8px;background:var(--s1);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--mt);text-decoration:none;font-size:.9rem;transition:all .2s}
 .ft-s:hover{color:var(--acc);border-color:var(--acc);transform:translateY(-3px) rotateZ(-5deg)}
 .ft-copy{color:var(--mt);font-size:.82rem}
 
@@ -170,8 +365,8 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
 @keyframes partFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.4}90%{opacity:.1}100%{opacity:0;transform:translateY(-100px) scale(1)}}
 
 /* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}
+@media(max-width:960px){
+  .hero-inner,.about-grid,.contact-grid,.resume-layout{grid-template-columns:1fr}
   .hero-3d{order:-1}
   .skills-3d-grid{grid-template-columns:repeat(2,1fr)}
   .proj-grid{grid-template-columns:1fr}
@@ -179,10 +374,13 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
   .nav-links{display:none}
   .hamburger{display:flex}
   .about-card-3d{transform:none}
+  .resume-card-box{padding:2.2rem 1.5rem}
 }
 @media(max-width:560px){
   .skills-3d-grid{grid-template-columns:1fr}
   .hero-name{font-size:clamp(4rem,18vw,7rem)}
+  .resume-cta-group{flex-direction:column;width:100%}
+  .btn-res-dl,.btn-res-view{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -203,41 +401,48 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="Aditya_Ahamana_Resume.pdf" target="_blank" download="Aditya_Ahamana_Resume.pdf" class="nav-resume-btn">&#128196; Resume</a></li>
   </ul>
-  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home" onclick="closeMob()">Home</a>
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#skills" onclick="closeMob()">Skills</a>
   <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#resume" onclick="closeMob()">Resume</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="Aditya_Ahamana_Resume.pdf" target="_blank" download="Aditya_Ahamana_Resume.pdf" class="mob-resume" onclick="closeMob()">&#128196; Download CV</a>
 </div>
 
 <!-- ── HERO ── -->
 <section id="home">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow"><span class="pulse"></span>Full Stack Developer · 3+ Years Learning</div>
+      <div class="hero-eyebrow"><span class="pulse"></span>Full Stack Developer · CSBS @ MITS Gwalior</div>
       <h1 class="hero-name">
         HEY,<br>I'M<br><span class="line2">ADITYA<br>AHAMANA</span>
       </h1>
-      <p class="hero-subtitle">Full Stack Developer &amp; CS Student &mdash;<br>engineering robust systems from backend to browser.</p>
+      <p class="hero-subtitle">Full Stack Developer building web applications with React, JavaScript, Python, Firebase, and REST APIs. Designing responsive interfaces, connecting robust backends, and applying AI to solve real product problems.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn-p">&#128065; View My Work</a>
+        <a href="Aditya_Ahamana_Resume.pdf" target="_blank" download="Aditya_Ahamana_Resume.pdf" class="btn-resume">&#128196; Download CV</a>
         <a href="#contact" class="btn-s">&#9993; Let's Talk</a>
       </div>
     </div>
     <div class="hero-3d">
       <div>
         <div class="cube-scene">
-          <div class="cube-face cf-front">JAVA</div>
-          <div class="cube-face cf-back">C++</div>
-          <div class="cube-face cf-right">HTML</div>
-          <div class="cube-face cf-left">CSS</div>
-          <div class="cube-face cf-top">JS</div>
-          <div class="cube-face cf-bot">WRITE</div>
+          <div class="cube-face cf-front">REACT</div>
+          <div class="cube-face cf-back">PYTHON</div>
+          <div class="cube-face cf-right">FIREBASE</div>
+          <div class="cube-face cf-left">JAVA</div>
+          <div class="cube-face cf-top">JS / TS</div>
+          <div class="cube-face cf-bot">AI / ML</div>
         </div>
         <div class="hero-3d-label">Drag to spin</div>
       </div>
@@ -254,22 +459,29 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
           <div class="sec-eyebrow">Who I Am</div>
           <div class="sec-title" style="font-size:2.8rem">ABOUT<br>ME</div>
           <div class="about-stat-grid">
-            <div class="astat"><div class="astat-n">6+</div><div class="astat-l">Technologies</div></div>
-            <div class="astat"><div class="astat-n">4+</div><div class="astat-l">Projects</div></div>
-            <div class="astat"><div class="astat-n">3+</div><div class="astat-l">Years Learning</div></div>
-            <div class="astat"><div class="astat-n">&#8734;</div><div class="astat-l">Passion</div></div>
+            <div class="astat"><div class="astat-n">10+</div><div class="astat-l">Technologies</div></div>
+            <div class="astat"><div class="astat-n">5+</div><div class="astat-l">Projects &amp; Apps</div></div>
+            <div class="astat"><div class="astat-n">3+</div><div class="astat-l">Team Lead Roles</div></div>
+            <div class="astat"><div class="astat-n">&#8734;</div><div class="astat-l">Drive to Ship</div></div>
           </div>
         </div>
       </div>
       <div class="about-text reveal">
         <div class="sec-eyebrow">My Story</div>
-        <h2 class="sec-title">Building<br>The Stack</h2>
-        <p style="margin-top:1.2rem">I'm <strong>Aditya Ahamana</strong>, a B.Tech student at <strong>MITS Gwalior</strong> with 3+ years of hands-on learning in full stack development — from low-level systems programming to polished web interfaces.</p>
-        <p>My core stack spans <strong>Java</strong> and <strong>C++</strong> for backend and systems work, paired with <strong>HTML, CSS, and JavaScript</strong> for crafting responsive, dynamic frontends. I enjoy bridging both worlds to ship complete, end-to-end solutions.</p>
-        <p>Beyond code, I express ideas through <strong>content writing</strong> — turning technical concepts into clear, compelling narratives.</p>
-        <div class="edu-block">
-          <div class="edu-block-title">B.Tech — Computer Science &amp; Business Systems</div>
-          <div class="edu-block-sub">MITS Gwalior &nbsp;·&nbsp; 2025 – Present</div>
+        <h2 class="sec-title">Engineering<br>The Stack</h2>
+        <p style="margin-top:1.2rem">I'm <strong>Aditya Ahamana</strong>, a Full Stack Developer and CSBS undergraduate at <strong>Madhav Institute of Technology &amp; Science (MITS), Gwalior</strong>.</p>
+        <p>I build production-grade web applications utilizing <strong>JavaScript, React, Python, Firebase, and REST APIs</strong>. I focus on developing interactive user interfaces, connecting resilient backend architectures, and incorporating <strong>AI-powered solutions</strong> to solve genuine user and business needs.</p>
+        <p>As a <strong>Team Lead</strong> across projects and hackathons, I bring computer science and business systems discipline to collaborative software delivery.</p>
+        
+        <div class="edu-cards">
+          <div class="edu-block">
+            <div class="edu-block-title">B.Tech — Computer Science &amp; Business Systems (CSBS)</div>
+            <div class="edu-block-sub">Madhav Institute of Technology &amp; Science (MITS), Gwalior &nbsp;·&nbsp; 2025 – Present</div>
+          </div>
+          <div class="edu-block">
+            <div class="edu-block-title">Senior Secondary (Class XII – CBSE)</div>
+            <div class="edu-block-sub">Army Public School, Gwalior &nbsp;·&nbsp; 2024 – 2025</div>
+          </div>
         </div>
       </div>
     </div>
@@ -282,9 +494,35 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
     <div style="text-align:center;margin-bottom:3.5rem" class="reveal">
       <div class="sec-eyebrow" style="justify-content:center">What I Use</div>
       <h2 class="sec-title">MY TOOLKIT</h2>
-      <p class="sec-desc" style="margin:1rem auto 0">Technologies I wield to craft digital realities.</p>
+      <p class="sec-desc" style="margin:1rem auto 0">Technologies and frameworks I use to craft full-stack digital solutions.</p>
     </div>
+    
     <div class="skills-3d-grid">
+      <div class="skill-3d reveal" style="--sk-c:#00d8ff">
+        <div class="sk-top"><div class="sk-ico">⚛️</div><span class="sk-pct" style="color:#00d8ff">88%</span></div>
+        <div class="sk-name">React.js &amp; Vite</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="88" style="background:#00d8ff"></div></div>
+      </div>
+      <div class="skill-3d reveal" style="--sk-c:#f7df1e">
+        <div class="sk-top"><div class="sk-ico">⚡</div><span class="sk-pct" style="color:#f7df1e">86%</span></div>
+        <div class="sk-name">JavaScript (ES6+)</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="86" style="background:#f7df1e"></div></div>
+      </div>
+      <div class="skill-3d reveal" style="--sk-c:#ffca28">
+        <div class="sk-top"><div class="sk-ico">🔥</div><span class="sk-pct" style="color:#ffca28">85%</span></div>
+        <div class="sk-name">Firebase (Auth &amp; Firestore)</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="85" style="background:#ffca28"></div></div>
+      </div>
+      <div class="skill-3d reveal" style="--sk-c:#38bdf8">
+        <div class="sk-top"><div class="sk-ico">🎨</div><span class="sk-pct" style="color:#38bdf8">90%</span></div>
+        <div class="sk-name">Tailwind CSS &amp; Framer</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="90" style="background:#38bdf8"></div></div>
+      </div>
+      <div class="skill-3d reveal" style="--sk-c:#3776ab">
+        <div class="sk-top"><div class="sk-ico">🐍</div><span class="sk-pct" style="color:#3776ab">82%</span></div>
+        <div class="sk-name">Python</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="82" style="background:#3776ab"></div></div>
+      </div>
       <div class="skill-3d reveal" style="--sk-c:#f89820">
         <div class="sk-top"><div class="sk-ico">☕</div><span class="sk-pct" style="color:#f89820">85%</span></div>
         <div class="sk-name">Java</div>
@@ -296,24 +534,32 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
         <div class="sk-bar"><div class="sk-fill" data-w="80" style="background:#00599c"></div></div>
       </div>
       <div class="skill-3d reveal" style="--sk-c:#e34f26">
-        <div class="sk-top"><div class="sk-ico">🌐</div><span class="sk-pct" style="color:#e34f26">90%</span></div>
-        <div class="sk-name">HTML5</div>
-        <div class="sk-bar"><div class="sk-fill" data-w="90" style="background:#e34f26"></div></div>
+        <div class="sk-top"><div class="sk-ico">🌐</div><span class="sk-pct" style="color:#e34f26">92%</span></div>
+        <div class="sk-name">HTML5 &amp; CSS3</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="92" style="background:#e34f26"></div></div>
       </div>
-      <div class="skill-3d reveal" style="--sk-c:#1572b6">
-        <div class="sk-top"><div class="sk-ico">🎨</div><span class="sk-pct" style="color:#1572b6">85%</span></div>
-        <div class="sk-name">CSS3</div>
-        <div class="sk-bar"><div class="sk-fill" data-w="85" style="background:#1572b6"></div></div>
+      <div class="skill-3d reveal" style="--sk-c:#47c8ff">
+        <div class="sk-top"><div class="sk-ico">🔌</div><span class="sk-pct" style="color:#47c8ff">84%</span></div>
+        <div class="sk-name">REST APIs &amp; MySQL</div>
+        <div class="sk-bar"><div class="sk-fill" data-w="84" style="background:#47c8ff"></div></div>
       </div>
-      <div class="skill-3d reveal" style="--sk-c:#f7df1e">
-        <div class="sk-top"><div class="sk-ico">⚡</div><span class="sk-pct" style="color:#f7df1e">75%</span></div>
-        <div class="sk-name">JavaScript</div>
-        <div class="sk-bar"><div class="sk-fill" data-w="75" style="background:#f7df1e"></div></div>
-      </div>
-      <div class="skill-3d reveal" style="--sk-c:#e8ff47">
-        <div class="sk-top"><div class="sk-ico">✍️</div><span class="sk-pct" style="color:#e8ff47">88%</span></div>
-        <div class="sk-name">Content Writing</div>
-        <div class="sk-bar"><div class="sk-fill" data-w="88" style="background:#e8ff47"></div></div>
+    </div>
+
+    <!-- Additional Tools & Platforms -->
+    <div class="skills-pill-group reveal">
+      <div class="sp-title">&#9881; Core Competencies, Tools &amp; Platforms</div>
+      <div class="sp-list">
+        <span class="sp-tag">Full Stack Web Development</span>
+        <span class="sp-tag">AI-Powered App Development</span>
+        <span class="sp-tag">UI/UX Design</span>
+        <span class="sp-tag">API Integration</span>
+        <span class="sp-tag">Git &amp; GitHub</span>
+        <span class="sp-tag">Postman</span>
+        <span class="sp-tag">Figma</span>
+        <span class="sp-tag">Netlify</span>
+        <span class="sp-tag">Render</span>
+        <span class="sp-tag">OpenAI Codex</span>
+        <span class="sp-tag">Cursor AI</span>
       </div>
     </div>
   </div>
@@ -324,52 +570,150 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
   <div class="wrap">
     <div style="text-align:center;margin-bottom:3.5rem" class="reveal">
       <div class="sec-eyebrow" style="justify-content:center">Portfolio</div>
-      <h2 class="sec-title">THINGS I'VE BUILT</h2>
-      <p class="sec-desc" style="margin:1rem auto 0">A selection of work showcasing my craft and growth.</p>
+      <h2 class="sec-title">FEATURED PROJECTS</h2>
+      <p class="sec-desc" style="margin:1rem auto 0">Flagship platforms engineered with enterprise architecture, AI governance, and full-stack performance.</p>
     </div>
     <div class="proj-grid">
+      <!-- Project 1: GDFA (Sabse 1 pe) -->
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#0d1b2a,#1b2838);--pt-glow:rgba(71,200,255,0.25)">
-          <div class="proj-thumb-ico">📋</div>
+        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#071e12,#0f3a22);--pt-glow:rgba(71,255,160,0.35)">
+          <div class="proj-thumb-ico">⚽</div>
         </div>
         <div class="proj-body">
-          <div class="proj-name">Registration Portal</div>
-          <div class="proj-desc">A sleek multi-step event registration system with form validation, progress indicators, and confirmation flows — built for institutional use.</div>
-          <div class="proj-tags"><span class="ptag">Java</span><span class="ptag">HTML</span><span class="ptag">CSS</span></div>
-          <a href="https://adityaahamana18.github.io/registrationportal/" class="proj-link">View Project ↗</a>
+          <span class="proj-badge">Lead Architect &amp; Full Stack Developer</span>
+          <div class="proj-name">GDFA Official Portal</div>
+          <div class="proj-desc">Enterprise sports governance &amp; match management platform for Gwalior District Football Association (est. 1952, affiliated with MPFA &amp; AIFF). Features atomic league standings recalculation, verified tournament match center, executive committee roster, and granular role-based access control (RBAC).</div>
+          <div class="proj-tags">
+            <span class="ptag">Django</span>
+            <span class="ptag">Python 3.12</span>
+            <span class="ptag">React 19</span>
+            <span class="ptag">Neon PostgreSQL</span>
+            <span class="ptag">Tailwind CSS</span>
+            <span class="ptag">Framer Motion</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://www.gdfa.in/" target="_blank" class="proj-btn-live">⚡ Live Site ↗</a>
+            <a href="https://github.com/adityaahamana18/Gdfa" target="_blank" class="proj-btn-gh">&#128187; GitHub ↗</a>
+          </div>
         </div>
       </div>
+
+      <!-- Project 2: EchoLedger -->
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#0f1f1a,#162820);--pt-glow:rgba(150,191,72,0.25)">
-          <div class="proj-thumb-ico">✅</div>
+        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#0b192c,#1a2b49);--pt-glow:rgba(71,200,255,0.3)">
+          <div class="proj-thumb-ico">🛡️</div>
         </div>
         <div class="proj-body">
-          <div class="proj-name">To-Do List App</div>
-          <div class="proj-desc">Feature-rich task management with local storage, priority sorting, drag-to-reorder, and smooth animated interactions.</div>
-          <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span></div>
-          <a href="#" class="proj-link">View Project ↗</a>
+          <span class="proj-badge">Team Lead &amp; Full Stack Developer</span>
+          <div class="proj-name">EchoLedger</div>
+          <div class="proj-desc">AI Decision Governance &amp; Accountability Platform eliminating black-box bias in scholarships and hiring. Engineered deterministic scoring rules, a 3-Agent AI Jury deliberation stream via Server-Sent Events (SSE), demographic stripping, and tamper-evident SHA-256 cryptographic verification receipts.</div>
+          <div class="proj-tags">
+            <span class="ptag">React</span>
+            <span class="ptag">Node.js</span>
+            <span class="ptag">Firebase</span>
+            <span class="ptag">Groq LLaMA 3.3</span>
+            <span class="ptag">Tailwind CSS</span>
+            <span class="ptag">SSE</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://echoledger.xyz" target="_blank" class="proj-btn-live">⚡ Live Demo ↗</a>
+            <a href="https://github.com/adityaahamana18/Echoledger" target="_blank" class="proj-btn-gh">&#128187; GitHub ↗</a>
+          </div>
         </div>
       </div>
+
+      <!-- Project 3: Privora AI -->
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#1a0f22,#2a1040);--pt-glow:rgba(200,100,255,0.2)">
-          <div class="proj-thumb-ico">🚀</div>
+        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#200d33,#351252);--pt-glow:rgba(195,90,255,0.3)">
+          <div class="proj-thumb-ico">🔒</div>
         </div>
         <div class="proj-body">
-          <div class="proj-name">Landing Page Design</div>
-          <div class="proj-desc">High-converting product landing page with animated hero, testimonials, pricing cards, and CTA optimization for maximum engagement.</div>
-          <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span></div>
-          <a href="#" class="proj-link">View Project ↗</a>
+          <span class="proj-badge">Lead AI &amp; Full Stack Developer</span>
+          <div class="proj-name">Privora AI</div>
+          <div class="proj-desc">Compliance &amp; synthetic data generation platform powered by a Conditional Tabular GAN (CTGAN) engine. Delivers privacy evaluations with k-Anonymity and DCR safety benchmarks, Train-on-Synthetic Test-on-Real (TSTR) utility retention, and verifiable on-chain audit reports via smart contracts.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">CTGAN</span>
+            <span class="ptag">React</span>
+            <span class="ptag">Ethers.js (Web3)</span>
+            <span class="ptag">Firebase</span>
+            <span class="ptag">Tailwind CSS</span>
+          </div>
         </div>
       </div>
+
+      <!-- Project 4: PreCure AI -->
       <div class="proj-card reveal">
-        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#1a1500,#2a2400);--pt-glow:rgba(232,255,71,0.3)">
-          <div class="proj-thumb-ico">💼</div>
+        <div class="proj-thumb" style="--pt-bg:linear-gradient(135deg,#281802,#3d2403);--pt-glow:rgba(255,185,50,0.3)">
+          <div class="proj-thumb-ico">🦺</div>
         </div>
         <div class="proj-body">
-          <div class="proj-name">Personal Portfolio</div>
-          <div class="proj-desc">This very site — immersive 3D interactions, WebGL particle field, CSS perspective transforms, and a fully responsive dark aesthetic.</div>
-          <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span><span class="ptag">Three.js</span></div>
-          <a href="#" class="proj-link">View Project ↗</a>
+          <span class="proj-badge">Full Stack &amp; ML Engineer</span>
+          <div class="proj-name">PreCure AI</div>
+          <div class="proj-desc">Serious Injury &amp; Fatality (SIF) Precursor Detection &amp; HSE Intelligence platform for high-risk industrial operations. Analyzes unstructured safety field observations and incident narratives, maps IOGP Life-Saving Rules, provides explainable feature attribution, and ingests PNGRB regulatory reports.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Machine Learning / NLP</span>
+            <span class="ptag">React</span>
+            <span class="ptag">FastAPI</span>
+            <span class="ptag">Explainable AI</span>
+            <span class="ptag">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESUME SECTION ── -->
+<section id="resume">
+  <div class="wrap">
+    <div class="resume-card-box reveal">
+      <div class="resume-layout">
+        <div>
+          <div class="resume-meta-badge">&#128196; Curriculum Vitae</div>
+          <h2 class="sec-title" style="font-size:clamp(2.5rem,5vw,4.2rem)">MY RESUME</h2>
+          <p style="color:var(--mt);margin-top:1rem;font-size:1rem;line-height:1.7;font-weight:300">
+            Looking for a dedicated Full Stack Developer with hands-on expertise in React, JavaScript, Python, Firebase, and AI integration? Get a complete overview of my experience, leadership, and credentials.
+          </p>
+
+          <div class="resume-highlights">
+            <div class="resume-hl-item">
+              <div class="resume-hl-icon">&#10003;</div>
+              <div class="resume-hl-text">
+                <h4>Full Stack Web &amp; AI Development</h4>
+                <p>Building responsive web apps, cloud backend integration with Firebase, and AI-enabled product workflows.</p>
+              </div>
+            </div>
+            <div class="resume-hl-item">
+              <div class="resume-hl-icon">&#9733;</div>
+              <div class="resume-hl-text">
+                <h4>Proven Architecture &amp; Leadership</h4>
+                <p>Architected the official GDFA platform and led development for EchoLedger, Privora AI, and PreCure AI across production and hackathons.</p>
+              </div>
+            </div>
+            <div class="resume-hl-item">
+              <div class="resume-hl-icon">&#127891;</div>
+              <div class="resume-hl-text">
+                <h4>Academic Excellence</h4>
+                <p>B.Tech in Computer Science &amp; Business Systems at MITS Gwalior; Senior Secondary from Army Public School, Gwalior.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-preview-box">
+          <div class="resume-file-icon">&#128196;</div>
+          <div class="resume-file-name">Aditya Ahamana Resume.pdf</div>
+          <div class="resume-file-info">Format: PDF &nbsp;·&nbsp; Full Stack &amp; AI Developer &nbsp;·&nbsp; Updated 2026</div>
+          <div class="resume-cta-group">
+            <a href="Aditya_Ahamana_Resume.pdf" download="Aditya_Ahamana_Resume.pdf" class="btn-res-dl">
+              &#128190; Download Resume
+            </a>
+            <a href="Aditya_Ahamana_Resume.pdf" target="_blank" class="btn-res-view">
+              &#128065; Preview in Tab
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -382,12 +726,16 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
     <div class="contact-grid">
       <div class="reveal">
         <div class="sec-eyebrow">Get In Touch</div>
-        <h2 class="sec-title">LET'S<br>WORK</h2>
-        <p style="color:var(--mt);margin-top:1rem;font-size:1rem;font-weight:300">Have a project or want to collaborate? I'd love to connect.</p>
+        <h2 class="sec-title">LET'S<br>CONNECT</h2>
+        <p style="color:var(--mt);margin-top:1rem;font-size:1rem;font-weight:300">Have an opportunity, project collaboration, or want to say hi? Reach out directly.</p>
         <div class="c-links">
           <a href="mailto:adityaahamana18@gmail.com" class="c-link">
             <div class="c-link-ico">✉</div>
             <div><div class="c-link-label">Email</div><div class="c-link-val">adityaahamana18@gmail.com</div></div>
+          </a>
+          <a href="tel:+919770581880" class="c-link">
+            <div class="c-link-ico">&#9742;</div>
+            <div><div class="c-link-label">Phone</div><div class="c-link-val">+91 9770581880</div></div>
           </a>
           <a href="https://linkedin.com/in/adityaahamana" target="_blank" class="c-link">
             <div class="c-link-ico" style="font-size:.78rem;font-weight:700">in</div>
@@ -396,6 +744,10 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
           <a href="https://github.com/adityaahamana18" target="_blank" class="c-link">
             <div class="c-link-ico" style="font-size:.72rem;font-weight:700">GH</div>
             <div><div class="c-link-label">GitHub</div><div class="c-link-val">github.com/adityaahamana18</div></div>
+          </a>
+          <a href="Aditya_Ahamana_Resume.pdf" download="Aditya_Ahamana_Resume.pdf" class="c-link" style="border-color:rgba(232,255,71,0.25)">
+            <div class="c-link-ico" style="color:var(--acc)">📄</div>
+            <div><div class="c-link-label" style="color:var(--acc)">Resume / CV</div><div class="c-link-val">Download PDF directly</div></div>
           </a>
         </div>
       </div>
@@ -406,7 +758,7 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
             <div class="f-grp"><label>Email</label><input type="email" placeholder="your@email.com" required></div>
           </div>
           <div class="f-grp"><label>Subject</label><input type="text" placeholder="What's this about?" required></div>
-          <div class="f-grp"><label>Message</label><textarea placeholder="Tell me about your project…" required></textarea></div>
+          <div class="f-grp"><label>Message</label><textarea placeholder="Tell me about your project or opportunity…" required></textarea></div>
           <button type="submit" class="btn-send">&#9993; Send Message</button>
           <div class="f-ok" id="fok">&#10003; Sent! I'll get back to you soon.</div>
         </form>
@@ -418,11 +770,13 @@ footer{background:var(--s1);border-top:1px solid var(--bd);padding:3rem 6%;text-
 <!-- FOOTER -->
 <footer>
   <div class="ft-logo">ADITYA AHAMANA.</div>
-  <p style="color:var(--mt);font-size:.85rem;max-width:380px;margin:0 auto .5rem">Full Stack Developer · MITS Gwalior · CS &amp; Business Systems</p>
+  <p style="color:var(--mt);font-size:.85rem;max-width:420px;margin:0 auto .5rem">Full Stack Developer · MITS Gwalior · CS &amp; Business Systems</p>
   <div class="ft-soc">
-    <a href="mailto:adityaahamana18@gmail.com" class="ft-s">✉</a>
-    <a href="https://linkedin.com/in/adityaahamana" class="ft-s" target="_blank" style="font-size:.72rem;font-weight:700">in</a>
-    <a href="https://github.com/adityaahamana18" class="ft-s" target="_blank" style="font-size:.68rem;font-weight:700">GH</a>
+    <a href="mailto:adityaahamana18@gmail.com" class="ft-s" title="Email">✉</a>
+    <a href="tel:+919770581880" class="ft-s" title="Call">&#9742;</a>
+    <a href="https://linkedin.com/in/adityaahamana" class="ft-s" target="_blank" style="font-size:.72rem;font-weight:700" title="LinkedIn">in</a>
+    <a href="https://github.com/adityaahamana18" class="ft-s" target="_blank" style="font-size:.68rem;font-weight:700" title="GitHub">GH</a>
+    <a href="Aditya_Ahamana_Resume.pdf" class="ft-s" target="_blank" download="Aditya_Ahamana_Resume.pdf" style="font-size:.75rem" title="Download Resume">📄</a>
   </div>
   <p class="ft-copy">© 2026 Aditya Ahamana. Crafted with passion &#10084;</p>
 </footer>
@@ -481,7 +835,7 @@ const cur=document.getElementById('cursor'),ring=document.getElementById('cursor
 let cx=0,cy=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;cur.style.left=cx+'px';cur.style.top=cy+'px';});
 (function animCursor(){requestAnimationFrame(animCursor);rx+=(cx-rx)*.12;ry+=(cy-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';})();
-document.querySelectorAll('a,button,.proj-card,.skill-3d').forEach(el=>{
+document.querySelectorAll('a,button,.proj-card,.skill-3d,.resume-preview-box').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(0.5)';});
   el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';});
 });
